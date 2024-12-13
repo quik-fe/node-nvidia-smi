@@ -1,0 +1,66 @@
+{
+  "name": "@quik-fe/node-nvidia-smi",
+  "version": "1.0.0",
+  "description": "A Node.js wrapper for NVIDIA SMI to monitor GPU stats.",
+  "source": "src/main.ts",
+  "main": "dist/main.umd.js",
+  "module": "dist/main.module.mjs",
+  "unpkg": "dist/main.umd.js",
+  "types": "./dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "require": "./dist/main.js",
+      "default": "./dist/main.modern.mjs"
+    },
+    "./src/main.ts": "./src/main.ts"
+  },
+  "keywords": [
+    "nvidia-smi",
+    "gpu",
+    "monitor",
+    "node-gpu"
+  ],
+  "files": [
+    "src/**/*.ts",
+    "dist/**/*.js*",
+    "dist/**/*.mjs*",
+    "dist/**/*.d.ts"
+  ],
+  "scripts": {
+    "build": "tsup ./src/main.ts --format cjs,esm --dts --clean --sourcemap",
+    "watch": "tsup ./src/main.ts --watch",
+    "dev": "pnpm run watch",
+    "start": "pnpm run build",
+    "prepack": "rm -rf dist && pnpm run build",
+    "test": "jest"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quik-fe/node-nvidia-smi.git"
+  },
+  "author": "zhzluke96",
+  "bugs": {
+    "url": "https://github.com/quik-fe/node-nvidia-smi/issues"
+  },
+  "homepage": "https://github.com/quik-fe/node-nvidia-smi#readme",
+  "devDependencies": {
+    "@types/filesize-parser": "^1.5.3",
+    "@types/node": "^22.10.2",
+    "@types/which": "^3.0.4",
+    "tslib": "^2.8.1",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.0",
+    "filesize-parser": "^1.5.1",
+    "which": "^5.0.0"
+  }
+}
