@@ -1,6 +1,6 @@
 {
   "name": "@quik-fe/node-nvidia-smi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Node.js wrapper for NVIDIA SMI to monitor GPU stats.",
   "source": "src/main.ts",
   "main": "dist/main.js",
